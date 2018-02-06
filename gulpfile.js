@@ -127,7 +127,7 @@ gulp.task('watch', ['browserSync', 'css', 'js'], function () {
 // for building purpose (finalization)
 gulp.task('build', function (callback) {
   runSequence('clean', 
-    ['html', 'css', 'js', 'images',],
+    ['html', 'css', 'js', 'images'],
     callback
   );
 });
