@@ -21,13 +21,13 @@ gulp.task('css:device', function() {
     .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('css:device-img', function() {
-  return gulp.src(
-    './node_modules/html5-device-mockups/device-mockups/**/*'
-  )
-    .pipe(imageMin())
-    .pipe(gulp.dest('app/device-mockups'));
-})
+// gulp.task('css:device-img', function() {
+//   return gulp.src(
+//     './node_modules/html5-device-mockups/device-mockups/**/*'
+//   )
+//     .pipe(imageMin())
+//     .pipe(gulp.dest('app/device-mockups'));
+// })
 
 // compile css
 gulp.task('css:compile', function() {
@@ -54,7 +54,7 @@ gulp.task('css:minify', ['css:compile'], function() {
 });
 
 // complete css task
-gulp.task('css', ['css:compile', 'css:device', 'css:device-img','css:minify']);
+gulp.task('css', ['css:compile', 'css:device','css:minify']);
 
 // minify js
 gulp.task('js:minify', function() {
@@ -87,11 +87,11 @@ gulp.task('browserSync', function() {
 
 gulp.task('images:device', function() {
   return gulp.src(
-    './node_modules/html5-device-mockups/device-mockups/**/*'
+    './node_modules/html5-device-mockups/device-mockups/iPhone7/*'
   )
     .pipe(cache(imageMin()))
-    .pipe(gulp.dest('app/device-mockups'))
-    .pipe(gulp.dest('dist/device-mockups'));
+    .pipe(gulp.dest('app/device-mockups/iPhone7'))
+    .pipe(gulp.dest('dist/device-mockups/iPhone7'));
 });
 
 gulp.task('images:background', function() {
@@ -116,7 +116,7 @@ gulp.task('clean:dist', function() {
 gulp.task('clean', ['clean:dist']);
 
 // for development purpose
-gulp.task('watch', ['browserSync', 'css', 'js'], function () {
+gulp.task('watch', ['browserSync', 'css', 'js', 'images'], function () {
   gulp.watch('app/scss/**/*.scss', ['css']);
   gulp.watch('app/js/*.js', ['js']);
   gulp.watch('app/img/**/*', browserSync.reload);

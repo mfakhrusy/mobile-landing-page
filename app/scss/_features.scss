@@ -45,8 +45,6 @@ section#page-features {
     margin-top: 5rem;
   }
 
-
-
   > div {
     display: flex;
     flex-wrap: wrap;
@@ -100,5 +98,16 @@ section#page-features {
   @media screen and (min-width: $width-large-tablet) and
   (max-width: $width-minimum-pc - 1px) {
     margin-left: 5rem;
+  }
+}
+
+.feature-logo {
+  margin-bottom: 1rem;
+  
+  svg {
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }

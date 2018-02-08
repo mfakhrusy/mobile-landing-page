@@ -363,6 +363,14 @@ section#page-features {
   .feature-opensource {
     margin-left: 5rem; } }
 
+.feature-logo {
+  margin-bottom: 1rem; }
+  .feature-logo svg {
+    color: #609fdf;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+
 section#page-callout {
   background: url(../img/callout-img.jpg) center no-repeat;
   background-size: cover;
